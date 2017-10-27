@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="34e23ea9-7ad9-427f-a2a9-f970e5bb31b4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Galerkin/.ipynb_checkpoints/Galerkin-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Galerkin/Galerkin.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Monte-Carlo/.ipynb_checkpoints/Monte-Carlo-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Monte-Carlo/Monte-Carlo.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/.vscode/launch.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/.vscode/settings.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/code test.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/coffee.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/coffee.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/compare.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/covfeve.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/error.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/milk.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/plots.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод Эйлера/Отчет1.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/.idea/Метод релаксации.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/.ipynb_checkpoints/SOR-checkpoint.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/SOR.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Метод релаксации/solver.py" afterPath="" />
-    </list>
+    <list default="true" id="34e23ea9-7ad9-427f-a2a9-f970e5bb31b4" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,25 +12,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="relax.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="relax.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2. Relaxation/relax.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="17">
               <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FEM.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/3. FEM Galerkin/FEM.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="538">
-              <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,8 +68,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -133,6 +96,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -278,6 +243,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/2. Relaxation/relax.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2. Relaxation/relax.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
@@ -293,22 +268,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/2. Relaxation/relax.py">
+    <entry file="file://$PROJECT_DIR$/3. FEM Galerkin/FEM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="697">
+          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3. FEM Galerkin/FEM.py">
+    <entry file="file://$PROJECT_DIR$/2. Relaxation/relax.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="42" column="12" lean-forward="false" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+        <state relative-caret-position="17">
+          <caret line="50" column="25" lean-forward="false" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
