@@ -79,19 +79,25 @@ class Solver:
                     )
         return new_grid_val
 
-    def solve(self, i, show=False):
+    def solve(self, error, show=False):
         """
         Evaluate new values on mesh grid
-        :param i: int
-        Number of iterations
+        :param i: float
+        Required error
         :param show: bool
         Plot or not
         :return: 2D np.array
         Finite values on mesh
         """
-        for j in tqdm(range(i)):
+        i = 0
+        pbar = tqdm(total = error)
+        while np.linalg.norm(self.values - self.__update_values__())>error:
+            pbar.update(1)
             self.values = self.__update_values__()
+            i+=1
+        pbar.close()
         if show:
+            print 'Number of iterations: {}'.format(i)
             plt.figure()
             im = plt.imshow(self.values)
             plt.colorbar(im)
