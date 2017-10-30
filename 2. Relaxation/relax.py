@@ -91,9 +91,11 @@ class Solver:
         """
         i = 0
         pbar = tqdm(total = error)
-        while np.linalg.norm(self.values - self.__update_values__())>error:
+        new_val = self.__update_values__()
+        while np.max(abs(self.values - new_val))>error:
             pbar.update(1)
-            self.values = self.__update_values__()
+            self.values = new_val
+            new_val = self.__update_values__()
             i+=1
         pbar.close()
         if show:
