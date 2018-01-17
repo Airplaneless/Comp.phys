@@ -16,8 +16,6 @@ class SpinLattice:
         SpinLattice constructor
         :param matrix: np.ndarray
         Matrix of spins
-        :param physical_size: tuple(2)
-        Physical size of lattice
         """
         self.matrix = matrix
 
@@ -135,12 +133,13 @@ class SpinLatticeList:
         plt.title('Iteration = 0')
         im = plt.imshow(self.list[0].matrix, interpolation='bilinear')
 
-        def update(j):
+        def update(j, *args, **kwargs):
             im.set_array(self.list[j].matrix)
             plt.title('Iteration = {}'.format(j))
-            return im
+            return im,
 
         return animation.FuncAnimation(fig, update, frames=range(start, stop), blit=True)
+
 
 class SimulationRunner:
 
@@ -164,41 +163,40 @@ class SimulationRunner:
         self.epoch = epoch
 
     @staticmethod
-    def spin_structure(lattices, size, axis):
+    def spin_structure(lattices, size):
         """
         Evaluate spin structure for XY or Z
         :param lattices: list of SpinLattice
         :param size: tuple(2)
         size of back space
-        :param axis: str
-        'xy' or 'z'.list
-        :return: 2d numpy.ndarray
-        Spin structure
+        :return: list of numpy.ndarray
+        List of spin structures for xy and z axes
         """
-        structures = list()
+        structures_xy = np.zeros((size[0], size[1]))
+        structures_z = np.zeros((size[0], size[1]))
         x_size, y_size, vec_dim = np.shape(lattices.list[0].matrix)
         for k in tqdm(xrange(len(lattices.list)), desc='Evaluate spin structure'):
-            structure = np.zeros((size[0], size[1]))
+            structure_xy = np.zeros((size[0], size[1]))
+            structure_z = np.zeros((size[0], size[1]))
             xsum = ysum = zsum = 0.0
             # for each point in lattice
             for I in xrange(size[0]):
                 for J in xrange(size[1]):
-                    vec_q = 4 * np.pi * np.array([I+1, J+1]) / np.array([size[0], size[1]])
-                    vec_q = - 2 * np.pi + vec_q
+                    vec_q = 10 * np.pi * np.array([I+1, J+1]).astype('float')
+                    vec_q /= np.array([size[0], size[1]]).astype('float')
+                    vec_q += - 10 * np.pi / 2.0
                     # summurize by all lattice
                     for i in xrange(x_size):
                         for j in xrange(y_size):
-                            vec_r = np.array([i+1, j+1]) / np.array([x_size, y_size]).astype('float')
+                            vec_r = np.array([i+1, j+1]).astype('float')
                             xsum += lattices.list[k].matrix[i][j][0] * np.exp(-1j * np.dot(vec_q, vec_r))
                             ysum += lattices.list[k].matrix[i][j][1] * np.exp(-1j * np.dot(vec_q, vec_r))
                             zsum += lattices.list[k].matrix[i][j][2] * np.exp(-1j * np.dot(vec_q, vec_r))
-                    if axis == 'xy':
-                        structure[I][J] = xsum ** 2 + ysum ** 2
-                    elif axis == 'z':
-                        structure[I][J] = zsum ** 2
-                structures.append(structure)
-                spin_structure = np.mean(structures, axis=0)
-        return spin_structure
+                    structure_xy[I][J] = xsum ** 2 + ysum ** 2
+                    structure_z[I][J] = zsum ** 2
+                structures_xy += structure_xy
+                structures_z += structure_z
+        return structures_xy, structures_z
 
     def _spin_interaction(self, lattice, i, j):
         """
@@ -272,11 +270,3 @@ class SimulationRunner:
             new = self._make_step(res[-1])
             res.append(new)
         return SpinLatticeList(res)
-
-
-if __name__ == '__main__':
-    lt = SpinLattice.build1d_random(8, 8)
-    runner = SimulationRunner(model='Ising', temperature=2.0, magnetic_field=None, epoch=1000)
-    results = runner.run(lt, verbose=True)
-    ani = results.visualize(0, len(results.list))
-    ani.s
